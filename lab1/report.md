@@ -41,7 +41,7 @@ gdb是GNU项目的debugger,功能强大.主要有如下功能
 
 ## 步骤
 ### 编译
-'''shell
+```shell
 cd linux-3.18.6   
 make allnoconfig
 make 
@@ -84,7 +84,7 @@ find . | cpio -o -Hnewc |gzip -9 > ../rootfs.img
 ![](src/cc.png)
 
 最后启动的页面
-![](menuos.png)
+![](src/menuos.png)
 ## 总结
 两个重要的函数
 ### start_kernel
