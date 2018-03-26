@@ -2,7 +2,7 @@
 >一篇使用gdb,qemu来追踪linux启动过程中的关键事件的报告
 
 ## 环境
-我是在`实验楼`这个网站上进行实验的, 那里有专门的<<klinux内核分析>>实验,部署好了环境,比如安装了qemu,下载好了linux kernal
+我是在`实验楼`这个网站上进行实验的, 那里有专门的<<linux内核分析>>实验,部署好了环境,比如安装了qemu,下载好了linux kernal
 [这是网址](https://www.shiyanlou.com/courses/)
 
 * linux
@@ -54,21 +54,21 @@ gcc -o init linktable.c menu.c test.c -m32 -static –lpthread
 cd ../rootfs
 cp ../menu/init ./
 find . | cpio -o -Hnewc |gzip -9 > ../rootfs.img
+#制作好的rootf.img 已上传至repo
 ```
 ### 启动qemu
 
 ![](src/init.png)
 
 用`&`使qemu后台运行
-### gdb连接
-
-![](src/bef.png)
-
 此时qemu模拟启动操作系统处于暂停状态
 
 ![](src/stop.png)
 
-### gdb追踪
+### 启动gdb调试追踪
+
+![](src/bef.png)
+
 输入c,执行到断点(start_kernel)停止
 
 ![](src/c.png)
@@ -85,6 +85,7 @@ find . | cpio -o -Hnewc |gzip -9 > ../rootfs.img
 
 最后启动的页面
 ![](src/menuos.png)
+
 ## 总结
 两个重要的函数
 ### start_kernel
