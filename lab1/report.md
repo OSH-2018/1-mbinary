@@ -79,11 +79,13 @@ find . | cpio -o -Hnewc |gzip -9 > ../rootfs.img
 
 继续设置断点
 `break rest_init`
+
 ![](src/rest_init.png)
 
 ![](src/cc.png)
 
 最后启动的页面
+
 ![](src/menuos.png)
 
 ## 总结
